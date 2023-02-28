@@ -12,7 +12,7 @@ class ServiceProvider extends ServiceProviderBase
 {
     public function boot()
     {
-        $config = $this->app->get('config')->get('carbon.holidays');
+        $config = $this->app['config']->get('carbon.holidays');
 
         if ($config instanceof Closure) {
             $config = $config($this->app);
